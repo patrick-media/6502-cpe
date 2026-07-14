@@ -1,9 +1,9 @@
 # 6502-cpe
 **WARNING: This program was made very poorly, has not been refactored, and uses GLOBAL VARIABLES! Therefore, it is extremely unlikely to actually work unless its (admittedly simple) inner workings are very well understood!**
 
-This program flashes the contents of a provided binary file to an EEPROM connected to an Adruino EEPROM programmer circuit.
+The Command Processing Enhancer (CPE) program flashes the contents of a provided binary file to an EEPROM connected to an Adruino EEPROM programmer circuit.
 
-The program first reads a binary file and copies it into program memory. The contents of the file are then converted into a string format stored in a buffer. The buffer contains formatted binary data that can be inserted into a pre-written Arduino sketch that is the EEPROM programmer--all that is left blank in it by default is the program to flash, which the CPE program fills based on the binary file provided. The CPE program then calls the ```arduino-cli``` tool and compiles and uploads the sketch to the Arduino plugged into the user's computer. The sketch will then automatically begin executing the EEPROM flashing program.
+The CPE program first reads a binary file and copies it into program memory. The contents of the file are then converted into a string format stored in a buffer. The buffer contains formatted binary data that can be inserted into a pre-written Arduino sketch that is the EEPROM programmer--all that is left blank in it by default is the program to flash, which the CPE program fills based on the binary file provided. The CPE program then calls the ```arduino-cli``` tool and compiles and uploads the sketch to the Arduino plugged into the user's computer. The sketch will then automatically begin executing the EEPROM flashing program.
 
 ## Usage
 ```./cpe.exe -bin <file> -fqbn <fqbn> -cli <prog> -p <port> [-c]```
@@ -17,3 +17,6 @@ Arguments:\
 
 Example usage:\
 ```./cpe.exe -bin test.bin -fqbn arduino:renesas_uno:minima -cli arduino-cli -p COM4```
+
+## Misc. Notes
+The ```src``` folder contains example 6502 programs and include-files that have been compiled using ```vasm``` and flashed using the CPE program.
