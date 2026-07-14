@@ -7,11 +7,11 @@ This program follows a process that flashes the contents of a provided binary fi
 ```./cpe.exe -bin <file> -fqbn <fqbn> -cli <prog> -p <port> [-c]```
 
 Arguments:\
-```-bin```: Name of binary file to send to Arduino to flash EEPROM. Ex: ```... -bin my_program.bin ...```
-```-fqbn```: "Fully Qualified Board Name" field, required for arduino-cli. Ex: ```... -fqbn arduino:renesas_uno:minima ...```
-```-cli```: File path to the user's local arduino-cli executable. Note: if the location of the executable has been added to the PATH variable, only the name of the executable is needed. Ex (no PATH): ```... -cli C:\your\cli\arduino-cli ...```. Ex (PATH): ```... -cli arduino-cli ...```
-```-p```: Port specifier--choose whichever serial port your Arduino is connected to. Ex: ```... -p COM4 ...```
-```-c```: Compile-only mode--data will not be flashed to EEPROM, but the intermittent Arduino sketch file will be created. Useful for debugging potential problems in the stages between compilation and flashing. Ex: ```... -c ...```
+```-bin```: Name of binary file to send to Arduino to flash EEPROM. Ex: ```... -bin my_program.bin ...```\
+```-fqbn```: "Fully Qualified Board Name" field, required for arduino-cli. Ex: ```... -fqbn arduino:renesas_uno:minima ...```\
+```-cli```: File path to the user's local arduino-cli executable. Note: if the location of the executable has been added to the PATH variable, only the name of the executable is needed. Ex (no PATH): ```... -cli C:\your\cli\arduino-cli ...```. Ex (PATH): ```... -cli arduino-cli ...```\
+```-p```: Port specifier--choose whichever serial port your Arduino is connected to. Ex: ```... -p COM4 ...```\
+```-c```: Compile-only mode--data will not be flashed to EEPROM, but the intermittent Arduino sketch file will be created. Useful for debugging potential problems in the stages between compilation and flashing. Ex: ```... -c ...```\
 
 Example usage:\
 ```./cpe.exe -bin test.bin -fqbn arduino:renesas_uno:minima -cli arduino-cli -p COM4```
